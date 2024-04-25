@@ -29,6 +29,13 @@ def completar_tarefa(tarefas, indice_tarefa):
     tarefas[indice_tarefa_ajustado]["completada"] = True
   return
 
+def deletar_tarefa():
+  for tarefa in tarefas:
+    if(tarefa["completada"]==True):
+      tarefas.remove(tarefa)
+  print("\n Tarefas completadas foram deletadas:")
+  return
+
 tarefas=[]
 
 while True:
@@ -54,6 +61,8 @@ while True:
   elif escolha == "4":
     indice_tarefa = int(input("Digite o número da tarefa que deseja completar:"))
     completar_tarefa(tarefas, indice_tarefa)
+  elif escolha == "5":
+    deletar_tarefa()
   elif escolha == "6":
     break
 
